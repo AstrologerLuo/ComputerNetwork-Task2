@@ -112,7 +112,6 @@ while base < len(sends):
         print("超时，重传窗口中所有数据包")
         for seq in window_packets:
             client_socket.sendto(sends[seq], (server_ip, port))
-            start_times[seq] = time.time()  # 更新发送时间
             total_packets_sent += 1
             print(f"重传第{seq}个({x[seq]}~{y[seq]}字节)")
         # 重置next_seq以允许重新发送窗口中的包

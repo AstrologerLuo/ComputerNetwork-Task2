@@ -38,7 +38,7 @@ print(f"与 {addr} 建立连接成功\n")
 
 # 数据传输
 expected_seq = 0  #期望接收的序列号
-ack_num=-1#ack初始值
+ack_num=-1#数据传输阶段的ack初始值
 
 while True:
     data, addr = server_socket.recvfrom(80)
